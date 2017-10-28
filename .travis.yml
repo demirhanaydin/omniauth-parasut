@@ -1,7 +1,15 @@
 sudo: false
 language: ruby
 rvm:
-  - 2.2.1
-  - 2.3.0
-  - 2.4.0
+- 2.2.1
+- 2.3.0
+- 2.4.0
 before_install: gem install bundler
+deploy:
+  provider: rubygems
+  api_key:
+    secure: oa/o5oeY4cgrqJan9yr+3JfEMs4bHhy32fA+Omkm7RUYvV5gdEekMK7Bwfl0luKNyvlMOukO1eFR8NB1ZJeAto/knlkFdcBAxNIQ/lYvcLHKCj0tir3jn0K3n9nX7rWcOkaukkUOJ/twK7Pcq15UgtOrmus+cS9CxNJosJISP/F3qeCfFAL+bszcdzBdOpo100muNTAREnG75ceFpCnK3wnFj+/izEj/efE+sLMc2SpVF0bO/sXHAZTYpTQS2czuBdbWr48rCcg77Izp/ogPaONUjFjJ+/EVlSj25MNm0OoDTPHWd/qXl8bPaffO1tA9DqoNFtF/KN2riYpxVUk8hx5qeXr+PKlktDcT54D5JIGHdeFhJQjQKN0k/A2ulWjOHIlD90DtQLjxk+SQyDqIrZTvHLgpuhOe9VOeSbU47TYQuqzcCG6OgMLXt3IS+MVARYkEl8I2wZ20fOmF1C78OC05w93lm1LnB+EICSrweM1NVo2Uc1fPExmdyByULIf6neLk27zalO9Cl0dUz3or3dJlUx/CWHtqFRMCTrcP/lxQDZ2Dl6vhMctyQoboFsAHgze7rtSs60xdDdXvlXY+sTbmAmsQS6N0MATkGCNMWioVscSfSG9wcg6ZPNP1U9RcbAoNXGogbArfwBBddjI9KSZxKjyyv6TnWGcvrJIBsAA=
+  gem: omniauth-parasut
+  on:
+    tags: true
+    repo: demirhanaydin/omniauth-parasut
