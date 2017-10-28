@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
 
@@ -8,8 +10,8 @@ begin
   RuboCop::RakeTask.new
 rescue LoadError
   task :rubocop do
-    $stderr.puts 'RuboCop is disabled'
+    warn 'RuboCop is disabled'
   end
 end
 
-task default: [:spec, :rubocop]
+task default: %i[spec rubocop]
