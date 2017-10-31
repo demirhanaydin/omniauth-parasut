@@ -29,6 +29,11 @@ module OmniAuth
         end
       end
 
+      def request_phase
+        params = { redirect_uri: callback_url }.merge(options.authorize_params)
+        redirect client.auth_code.authorize_url(params)
+      end
+
       def raw_info
         @raw_info ||= access_token.get('/v4/me').parsed
       end
