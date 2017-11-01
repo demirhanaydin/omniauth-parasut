@@ -29,6 +29,10 @@ module OmniAuth
         end
       end
 
+      def callback_url
+        full_host + script_name + callback_path # + query_string
+      end
+
       def raw_info
         @raw_info ||= access_token.get('/v4/me').parsed
       end
