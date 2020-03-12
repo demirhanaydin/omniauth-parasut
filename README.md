@@ -28,6 +28,14 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
+One can configure parasut api home url by using the below script in an initializer.
+
+```ruby
+OmniAuth::Strategies::Parasut.configure do |default_options|
+  default_options['client_options'] = { site: 'http://api.heroku-staging.parasut.com' }
+end
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
